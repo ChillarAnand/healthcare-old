@@ -26,7 +26,7 @@ from frappe.model.utils import get_fetch_values
 from frappe.contacts.doctype.address.address import get_address_display
 from erpnext.accounts.doctype.tax_withholding_category.tax_withholding_category import get_party_tax_withholding_details
 
-from erpnext.healthcare.utils import manage_invoice_submit_cancel
+from healthcare.utils import manage_invoice_submit_cancel
 
 from six import iteritems
 
@@ -922,7 +922,7 @@ class SalesInvoice(SellingController):
 						asset = frappe.get_doc("Asset", item.asset)
 					else:
 						frappe.throw(_(
-							"Row #{0}: You must select an Asset for Item {1}.").format(item.idx, item.item_name), 
+							"Row #{0}: You must select an Asset for Item {1}.").format(item.idx, item.item_name),
 							title=_("Missing Asset")
 						)
 					if (len(asset.finance_books) > 1 and not item.finance_book
@@ -944,7 +944,7 @@ class SalesInvoice(SellingController):
 						gl_entries.append(self.get_gl_dict(gle, item=item))
 
 					self.set_asset_status(asset)
-				
+
 				else:
 					# Do not book income for transfer within same company
 					if not self.is_internal_transfer():
@@ -973,7 +973,7 @@ class SalesInvoice(SellingController):
 	def set_asset_status(self, asset):
 		if self.is_return:
 			asset.set_status()
-		else: 	
+		else:
 			asset.set_status("Sold" if self.docstatus==1 else None)
 
 	def make_loyalty_point_redemption_gle(self, gl_entries):

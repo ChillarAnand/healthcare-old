@@ -7,7 +7,7 @@ from frappe.utils.make_random import get_random
 import datetime
 from erpnext.demo.setup.setup_data import import_json
 from frappe.utils import getdate
-from erpnext.healthcare.doctype.lab_test.lab_test import create_test_from_template
+from healthcare.doctype.lab_test.lab_test import create_test_from_template
 
 def setup_data():
 	frappe.flags.mute_emails = True

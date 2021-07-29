@@ -10,7 +10,7 @@ from erpnext.accounts.doctype.sales_invoice.test_sales_invoice import create_sal
 from erpnext.stock.get_item_details import get_item_details
 from frappe import MandatoryError
 from erpnext.stock.doctype.item.test_item import make_item
-from erpnext.healthcare.doctype.lab_test_template.lab_test_template import make_item_price
+from healthcare.doctype.lab_test_template import make_item_price
 
 class TestPricingRule(unittest.TestCase):
 	def setUp(self):
