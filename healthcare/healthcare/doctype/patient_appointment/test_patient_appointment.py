@@ -4,7 +4,7 @@
 from __future__ import unicode_literals
 import unittest
 import frappe
-from healthcare.doctype.patient_appointment.patient_appointment import update_status, make_encounter
+from healthcare.healthcare.doctype.patient_appointment.patient_appointment import update_status, make_encounter
 from frappe.utils import nowdate, add_days, now_datetime
 from frappe.utils.make_random import get_random
 from erpnext.accounts.doctype.pos_profile.test_pos_profile import make_pos_profile
@@ -124,8 +124,8 @@ class TestPatientAppointment(unittest.TestCase):
 		self.assertEqual(frappe.db.get_value('Sales Invoice', sales_invoice_name, 'status'), 'Cancelled')
 
 	def test_appointment_booking_for_admission_service_unit(self):
-		from healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
-		from healthcare.doctype.inpatient_record.test_inpatient_record import \
+		from healthcare.healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
+		from healthcare.healthcare.doctype.inpatient_record.test_inpatient_record import \
 			create_inpatient, get_healthcare_service_unit, mark_invoiced_inpatient_occupancy
 
 		frappe.db.sql("""delete from `tabInpatient Record`""")
@@ -150,8 +150,8 @@ class TestPatientAppointment(unittest.TestCase):
 		discharge_patient(ip_record1)
 
 	def test_invalid_healthcare_service_unit_validation(self):
-		from healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
-		from healthcare.doctype.inpatient_record.test_inpatient_record import \
+		from healthcare.healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
+		from healthcare.healthcare.doctype.inpatient_record.test_inpatient_record import \
 			create_inpatient, get_healthcare_service_unit, mark_invoiced_inpatient_occupancy
 
 		frappe.db.sql("""delete from `tabInpatient Record`""")

@@ -6,10 +6,10 @@ import unittest
 import frappe
 import datetime
 from frappe.utils import getdate, now_datetime
-from healthcare.doctype.inpatient_record.test_inpatient_record import create_patient, create_inpatient, get_healthcare_service_unit, mark_invoiced_inpatient_occupancy
-from healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
-from healthcare.doctype.inpatient_medication_order.test_inpatient_medication_order import create_ipmo, create_ipme
-from healthcare.report.inpatient_medication_orders.inpatient_medication_orders import execute
+from healthcare.healthcare.doctype.inpatient_record.test_inpatient_record import create_patient, create_inpatient, get_healthcare_service_unit, mark_invoiced_inpatient_occupancy
+from healthcare.healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
+from healthcare.healthcare.doctype.inpatient_medication_order.test_inpatient_medication_order import create_ipmo, create_ipme
+from healthcare.healthcare.report.inpatient_medication_orders.inpatient_medication_orders import execute
 
 class TestInpatientMedicationOrders(unittest.TestCase):
 	@classmethod

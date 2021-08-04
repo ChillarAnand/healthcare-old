@@ -12,8 +12,8 @@ from frappe import _
 import datetime
 from frappe.core.doctype.sms_settings.sms_settings import send_sms
 from erpnext.hr.doctype.employee.employee import is_holiday
-from healthcare.doctype.healthcare_settings.healthcare_settings import get_receivable_account, get_income_account
-from healthcare.utils import check_fee_validity, get_service_item_and_practitioner_charge, manage_fee_validity
+from healthcare.healthcare.doctype.healthcare_settings.healthcare_settings import get_receivable_account, get_income_account
+from healthcare.healthcare.utils import check_fee_validity, get_service_item_and_practitioner_charge, manage_fee_validity
 
 class PatientAppointment(Document):
 	def validate(self):
@@ -72,7 +72,7 @@ class PatientAppointment(Document):
 
 	def validate_service_unit(self):
 		if self.inpatient_record and self.service_unit:
-			from healthcare.doctype.inpatient_medication_entry.inpatient_medication_entry import get_current_healthcare_service_unit
+			from healthcare.healthcare.doctype.inpatient_medication_entry.inpatient_medication_entry import get_current_healthcare_service_unit
 
 			is_inpatient_occupancy_unit = frappe.db.get_value('Healthcare Service Unit', self.service_unit,
 				'inpatient_occupancy')

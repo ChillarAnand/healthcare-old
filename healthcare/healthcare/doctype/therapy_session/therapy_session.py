@@ -10,7 +10,7 @@ from frappe.utils import get_time, flt
 from frappe.model.mapper import get_mapped_doc
 from frappe import _
 from frappe.utils import cstr, getdate, get_link_to_form
-from healthcare.doctype.healthcare_settings.healthcare_settings import get_receivable_account, get_income_account
+from healthcare.healthcare.doctype.healthcare_settings.healthcare_settings import get_receivable_account, get_income_account
 
 class TherapySession(Document):
 	def validate(self):

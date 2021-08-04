@@ -7,7 +7,7 @@ import frappe
 import unittest
 import json
 from frappe.utils import getdate, strip_html
-from healthcare.doctype.patient_appointment.test_patient_appointment import create_patient
+from healthcare.healthcare.doctype.patient_appointment.test_patient_appointment import create_patient
 
 class TestPatientHistorySettings(unittest.TestCase):
 	def setUp(self):

@@ -6,8 +6,8 @@ from __future__ import unicode_literals
 import frappe
 import unittest
 from frappe.utils import add_days, getdate, now_datetime
-from healthcare.doctype.inpatient_record.test_inpatient_record import create_patient, create_inpatient, get_healthcare_service_unit, mark_invoiced_inpatient_occupancy
-from healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
+from healthcare.healthcare.doctype.inpatient_record.test_inpatient_record import create_patient, create_inpatient, get_healthcare_service_unit, mark_invoiced_inpatient_occupancy
+from healthcare.healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
 
 class TestInpatientMedicationOrder(unittest.TestCase):
 	def setUp(self):

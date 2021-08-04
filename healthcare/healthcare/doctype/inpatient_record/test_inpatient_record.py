@@ -7,9 +7,9 @@ import frappe
 import unittest
 from frappe.utils import now_datetime, today
 from frappe.utils.make_random import get_random
-from healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
-from healthcare.doctype.lab_test.test_lab_test import create_patient_encounter
-from healthcare.utils import get_encounters_to_invoice
+from healthcare.healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
+from healthcare.healthcare.doctype.lab_test.test_lab_test import create_patient_encounter
+from healthcare.healthcare.utils import get_encounters_to_invoice
 
 class TestInpatientRecord(unittest.TestCase):
 	def test_admit_and_discharge(self):

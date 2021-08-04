@@ -8,7 +8,7 @@ from frappe import _
 from frappe.model.document import Document
 from frappe.utils import flt, get_link_to_form, getdate, nowtime
 from erpnext.stock.utils import get_latest_stock_qty
-from healthcare.doctype.healthcare_settings.healthcare_settings import get_account
+from healthcare.healthcare.doctype.healthcare_settings.healthcare_settings import get_account
 
 class InpatientMedicationEntry(Document):
 	def validate(self):

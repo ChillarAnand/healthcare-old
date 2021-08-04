@@ -6,11 +6,11 @@ from __future__ import unicode_literals
 import frappe
 import unittest
 from frappe.utils import add_days, getdate, now_datetime
-from healthcare.doctype.inpatient_record.test_inpatient_record import create_patient, create_inpatient, get_healthcare_service_unit, mark_invoiced_inpatient_occupancy
-from healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
-from healthcare.doctype.inpatient_medication_order.test_inpatient_medication_order import create_ipmo, create_ipme
-from healthcare.doctype.inpatient_medication_entry.inpatient_medication_entry import get_drug_shortage_map, make_difference_stock_entry
-from healthcare.doctype.healthcare_settings.healthcare_settings import get_account
+from healthcare.healthcare.doctype.inpatient_record.test_inpatient_record import create_patient, create_inpatient, get_healthcare_service_unit, mark_invoiced_inpatient_occupancy
+from healthcare.healthcare.doctype.inpatient_record.inpatient_record import admit_patient, discharge_patient, schedule_discharge
+from healthcare.healthcare.doctype.inpatient_medication_order.test_inpatient_medication_order import create_ipmo, create_ipme
+from healthcare.healthcare.doctype.inpatient_medication_entry.inpatient_medication_entry import get_drug_shortage_map, make_difference_stock_entry
+from healthcare.healthcare.doctype.healthcare_settings.healthcare_settings import get_account
 
 class TestInpatientMedicationEntry(unittest.TestCase):
 	def setUp(self):

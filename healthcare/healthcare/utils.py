@@ -10,9 +10,9 @@ from frappe import _
 from frappe.utils.formatters import format_value
 from frappe.utils import time_diff_in_hours, rounded
 from six import string_types
-from healthcare.doctype.healthcare_settings.healthcare_settings import get_income_account
-from healthcare.doctype.fee_validity.fee_validity import create_fee_validity
-from healthcare.doctype.lab_test.lab_test import create_multiple
+from healthcare.healthcare.doctype.healthcare_settings.healthcare_settings import get_income_account
+from healthcare.healthcare.doctype.fee_validity.fee_validity import create_fee_validity
+from healthcare.healthcare.doctype.lab_test.lab_test import create_multiple
 
 @frappe.whitelist()
 def get_healthcare_services_to_invoice(patient, company):
@@ -340,7 +340,7 @@ def get_service_item_and_practitioner_charge(doc):
 
 
 def get_appointment_type_service_item(appointment_type, department, is_inpatient):
-	from healthcare.doctype.appointment_type.appointment_type import get_service_item_based_on_department
+	from healthcare.healthcare.doctype.appointment_type.appointment_type import get_service_item_based_on_department
 
 	item_list = get_service_item_based_on_department(appointment_type, department)
 	service_item = None

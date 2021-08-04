@@ -6,9 +6,9 @@ from __future__ import unicode_literals
 import frappe
 import unittest
 from frappe.utils import getdate, flt, nowdate
-from healthcare.doctype.therapy_type.test_therapy_type import create_therapy_type
-from healthcare.doctype.therapy_plan.therapy_plan import make_therapy_session, make_sales_invoice
-from healthcare.doctype.patient_appointment.test_patient_appointment import create_healthcare_docs, create_patient, create_appointment
+from healthcare.healthcare.doctype.therapy_type.test_therapy_type import create_therapy_type
+from healthcare.healthcare.doctype.therapy_plan.therapy_plan import make_therapy_session, make_sales_invoice
+from healthcare.healthcare.doctype.patient_appointment.test_patient_appointment import create_healthcare_docs, create_patient, create_appointment
 
 class TestTherapyPlan(unittest.TestCase):
 	def test_creation_on_encounter_submission(self):

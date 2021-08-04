@@ -7,7 +7,7 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from frappe.utils import cstr
-from healthcare.doctype.patient_encounter.patient_encounter import get_prescription_dates
+from healthcare.healthcare.doctype.patient_encounter.patient_encounter import get_prescription_dates
 
 class InpatientMedicationOrder(Document):
 	def validate(self):

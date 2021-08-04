@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 import frappe
 import json
 from frappe.utils import cint
-from healthcare.utils import render_docs_as_html
+from healthcare.healthcare.utils import render_docs_as_html
 
 @frappe.whitelist()
 def get_feed(name, document_types=None, date_range=None, start=0, page_length=20):

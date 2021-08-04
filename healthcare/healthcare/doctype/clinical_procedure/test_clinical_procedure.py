@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 
 import unittest
 import frappe
-from healthcare.doctype.patient_appointment.test_patient_appointment import create_healthcare_docs, create_clinical_procedure_template
+from healthcare.healthcare.doctype.patient_appointment.test_patient_appointment import create_healthcare_docs, create_clinical_procedure_template
 
 test_dependencies = ['Item']
 

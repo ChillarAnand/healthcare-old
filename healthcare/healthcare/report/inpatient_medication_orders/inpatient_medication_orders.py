@@ -3,7 +3,7 @@
 
 from __future__ import unicode_literals
 import frappe
-from healthcare.doctype.inpatient_medication_entry.inpatient_medication_entry import get_current_healthcare_service_unit
+from healthcare.healthcare.doctype.inpatient_medication_entry.inpatient_medication_entry import get_current_healthcare_service_unit
 
 def execute(filters=None):
 	columns = get_columns()
