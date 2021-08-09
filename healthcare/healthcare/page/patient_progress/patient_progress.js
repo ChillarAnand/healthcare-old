@@ -79,7 +79,7 @@ class PatientProgress {
 
 	get_therapy_sessions_count() {
 		return frappe.xcall(
-			'erpnext.healthcare.page.patient_progress.patient_progress.get_therapy_sessions_count', {
+			'healthcare.healthcare.page.patient_progress.patient_progress.get_therapy_sessions_count', {
 				patient: this.patient_id,
 			}
 		).then(data => {
@@ -140,7 +140,7 @@ class PatientProgress {
 	}
 
 	update_heatmap_data(date_from) {
-		frappe.xcall('erpnext.healthcare.page.patient_progress.patient_progress.get_patient_heatmap_data', {
+		frappe.xcall('healthcare.healthcare.page.patient_progress.patient_progress.get_patient_heatmap_data', {
 			patient: this.patient_id,
 			date: date_from || frappe.datetime.year_start(),
 		}).then((data) => {
@@ -165,7 +165,7 @@ class PatientProgress {
 
 	render_percentage_chart(field, title) {
 		frappe.xcall(
-			'erpnext.healthcare.page.patient_progress.patient_progress.get_therapy_sessions_distribution_data', {
+			'healthcare.healthcare.page.patient_progress.patient_progress.get_therapy_sessions_distribution_data', {
 				patient: this.patient_id,
 				field: field
 			}
@@ -287,7 +287,7 @@ class PatientProgress {
 		if (!this.therapy_type) return;
 
 		frappe.xcall(
-			'erpnext.healthcare.page.patient_progress.patient_progress.get_therapy_progress_data', {
+			'healthcare.healthcare.page.patient_progress.patient_progress.get_therapy_progress_data', {
 				patient: this.patient_id,
 				therapy_type: this.therapy_type,
 				time_span: time_span
@@ -348,7 +348,7 @@ class PatientProgress {
 		if (!this.assessment_template) return;
 
 		frappe.xcall(
-			'erpnext.healthcare.page.patient_progress.patient_progress.get_patient_assessment_data', {
+			'healthcare.healthcare.page.patient_progress.patient_progress.get_patient_assessment_data', {
 				patient: this.patient_id,
 				assessment_template: this.assessment_template,
 				time_span: time_span
@@ -415,7 +415,7 @@ class PatientProgress {
 		if (!this.assessment) return;
 
 		frappe.xcall(
-			'erpnext.healthcare.page.patient_progress.patient_progress.get_therapy_assessment_correlation_data', {
+			'healthcare.healthcare.page.patient_progress.patient_progress.get_therapy_assessment_correlation_data', {
 				patient: this.patient_id,
 				assessment_template: this.assessment,
 				time_span: time_span
@@ -476,7 +476,7 @@ class PatientProgress {
 		if (!this.parameter) return;
 
 		frappe.xcall(
-			'erpnext.healthcare.page.patient_progress.patient_progress.get_assessment_parameter_data', {
+			'healthcare.healthcare.page.patient_progress.patient_progress.get_assessment_parameter_data', {
 				patient: this.patient_id,
 				parameter: this.parameter,
 				time_span: time_span

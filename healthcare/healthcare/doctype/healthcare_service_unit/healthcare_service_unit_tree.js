@@ -9,7 +9,7 @@ frappe.treeview_settings["Healthcare Service Unit"] = {
 		label: __("Company"),
 		default: erpnext.utils.get_tree_default("company")
 	}],
-	get_tree_nodes: 'erpnext.healthcare.utils.get_children',
+	get_tree_nodes: 'healthcare.healthcare.utils.get_children',
 	ignore_fields:["parent_healthcare_service_unit"],
 	onrender: function(node) {
 		if (node.data.occupied_out_of_vacant!==undefined) {
