@@ -41,10 +41,10 @@ bench get-app https://github.com/chillarAnand/erpnext --branch chc
 bench start &> bench_run_logs.txt &
 bench --site test_site reinstall --yes
 
-bench get-app https://github.com/ChillarAnand/erpnext_healthcare 
+bench get-app https://github.com/ChillarAnand/erpnext_healthcare
 
 bench --verbose --site test_site install-app erpnext
-bench --verbose --site test_site install-app erpnext_healthcare
+bench --verbose --site test_site install-app healthcare
 
 sed -i 's/watch:/# watch:/g' Procfile
 sed -i 's/schedule:/# schedule:/g' Procfile
