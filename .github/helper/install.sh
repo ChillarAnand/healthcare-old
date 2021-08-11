@@ -36,15 +36,15 @@ sudo apt-get install libcups2-dev
 
 cd ~/frappe-bench || exit
 
-bench get-app erpnext "${GITHUB_WORKSPACE}"
+bench get-app https://github.com/chillarAnand/erpnext --branch chc "${GITHUB_WORKSPACE}"
 
 bench start &> bench_run_logs.txt &
 bench --site test_site reinstall --yes
 
-bench get-app https://github.com/ChillarAnand/erpnext_healthcare "${GITHUB_WORKSPACE}"
+#bench get-app https://github.com/ChillarAnand/erpnext_healthcare "${GITHUB_WORKSPACE}"
 
 bench --verbose --site test_site install-app erpnext
-bench --verbose --site test_site install-app erpnext_healthcare
+#bench --verbose --site test_site install-app erpnext_healthcare
 
 sed -i 's/watch:/# watch:/g' Procfile
 sed -i 's/schedule:/# schedule:/g' Procfile
