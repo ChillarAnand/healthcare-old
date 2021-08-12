@@ -145,10 +145,7 @@ scheduler_events = {
 # Testing
 # -------
 
-def before_tests():
-	print('before_tests')
-before_tests = "erpnext.setup.utils.before_tests"
-before_tests = "healtchare.healtchare.hooks.before_tests"
+before_tests = "healthcare.healthcare.utils.before_tests"
 
 # Overriding Methods
 # ------------------------------

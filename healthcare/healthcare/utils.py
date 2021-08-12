@@ -717,3 +717,28 @@ def render_doc_as_html(doctype, docname, exclude_fields = []):
 		doc_html = "<div class='small'><div class='col-md-12 text-right'><a class='btn btn-default btn-xs' href='/app/Form/%s/%s'></a></div>" %(doctype, docname) + doc_html + '</div>'
 
 	return {'html': doc_html}
+
+
+def before_tests():
+	print('before_tests')
+	frappe.clear_cache()
+	# complete setup if missing
+	from frappe.desk.page.setup_wizard.setup_wizard import setup_complete
+	if not frappe.get_list("Company"):
+		setup_complete({
+			"currency"          :"USD",
+			"full_name"         :"Test User",
+			"company_name"      :"Frappe Care LLC",
+			"timezone"          :"America/New_York",
+			"company_abbr"      :"WP",
+			"industry"          :"Healthcare",
+			"country"           :"United States",
+			"fy_start_date"     :"2021-01-01",
+			"fy_end_date"       :"2021-12-31",
+			"language"          :"english",
+			"company_tagline"   :"Testing",
+			"email"             :"test@erpnext.com",
+			"password"          :"test",
+			"chart_of_accounts" : "Standard",
+			"domains"           : ["Healthcare"],
+		})
